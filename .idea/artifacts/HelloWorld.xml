@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="HelloWorld">
+    <output-path>$PROJECT_DIR$/out/artifacts/HelloWorld</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="RSI-T04" />
+        </element>
+        <element id="dir-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+      </element>
+    </root>
+  </artifact>
+</component>
