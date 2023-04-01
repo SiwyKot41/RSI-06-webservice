@@ -10,12 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Service Endpoint Interface
-@WebService(name = "HelloWorldService", portName = "7070",
-        serviceName = "xdd", targetNamespace = "http://org.fr.rsi")
+@WebService(name = "HelloWorldService", targetNamespace = "http://org.fr.rsi")
 @SOAPBinding(style = Style.DOCUMENT, use = Use.LITERAL) //optional
 public interface HelloWorld {
     @WebMethod
-    String getHelloWorldAsString(@WebParam(name = "name", mode = WebParam.Mode.IN) String name);
+    String getHelloWorldAsString();
 
     @WebMethod(action = "http://org.fr.rsi/produkty",
             operationName = "produkty", exclude = false)

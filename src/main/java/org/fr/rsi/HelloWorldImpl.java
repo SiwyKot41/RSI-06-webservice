@@ -1,17 +1,45 @@
 package org.fr.rsi;
 
-import javax.jws.WebMethod;
+import javax.annotation.Resource;
 import javax.jws.WebService;
+import javax.xml.ws.WebServiceContext;
+import javax.xml.ws.handler.MessageContext;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-@WebService(endpointInterface = "org.fr.rsi.HelloWorld",
-        name = "HelloWorldService", portName = "7070",
-        serviceName = "xdd", targetNamespace = "http://org.fr.rsi")
+@WebService(endpointInterface = "org.fr.rsi.HelloWorld", name = "HelloWorldService", targetNamespace = "http://org.fr.rsi")
 public class HelloWorldImpl implements HelloWorld {
+
+    @Resource
+    WebServiceContext wsctx;
     @Override
-    public String getHelloWorldAsString(String name) {
-        return "Witaj świecie JAX-WS: " + name;
+    public String getHelloWorldAsString() {
+        MessageContext mctx = wsctx.getMessageContext();
+
+        Map http_headers = (Map) mctx.get(MessageContext.HTTP_REQUEST_HEADERS);
+        List userList = (List) http_headers.get("Username");
+        List passList = (List) http_headers.get("Password");
+
+        String username = "";
+        String password = "";
+
+        if(userList!=null){
+            //get username
+            username = userList.get(0).toString();
+        }
+
+        if(passList!=null){
+            //get password
+            password = passList.get(0).toString();
+        }
+
+        //Should validate username and password with database
+        if (username.equals("mkyong") && password.equals("password")){
+            return "Hello World JAX-WS - Valid User!";
+        }else{
+            return "Unknown User!";
+        }
     }
 
     @Override
