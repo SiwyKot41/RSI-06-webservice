@@ -28,7 +28,7 @@ public class ImageServerImpl  {
 
     public Image downloadImage(String name) {
         try {
-            File image = new File("/home/philip/IdeaProjects/RSI-06-webservice" + name);
+            File image = new File("/home/philip/IdeaProjects/RSI-06-webservice/" + name);
             return ImageIO.read(image);
 
         } catch (IOException e) {
