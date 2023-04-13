@@ -17,7 +17,7 @@ public interface HelloWorld {
     String getHelloWorldAsString();
 
     @WebMethod(action = "http://org.fr.rsi/produkty",
-            operationName = "produkty", exclude = false)
+            operationName = "products", exclude = false)
     String getProducts();
 
     class Product {

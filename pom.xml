@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>RSI-T04</artifactId>
+    <artifactId>WebServiceGlass</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>RSI-T04</name>
+    <name>WebServiceGlass</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

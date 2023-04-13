@@ -54,7 +54,6 @@
   <servers>
     <server config-ref="server-config" name="server">
       <application-ref ref="__admingui" virtual-servers="__asadmin"></application-ref>
-      <application-ref ref="WebServiceGlass-1.0-SNAPSHOT" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="jms/__defaultConnectionFactory"></resource-ref>
@@ -454,17 +453,5 @@
     <secure-admin-principal dn="CN=localhost-instance,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US"></secure-admin-principal>
   </secure-admin>
   <clusters></clusters>
-  <applications>
-    <application context-root="/WebServiceGlass-1.0-SNAPSHOT" object-type="user" name="WebServiceGlass-1.0-SNAPSHOT" location="${com.sun.aas.instanceRootURI}/applications/WebServiceGlass-1.0-SNAPSHOT/">
-      <property name="appLocation" value="${com.sun.aas.instanceRootURI}/applications/__internal/WebServiceGlass-1.0-SNAPSHOT/WebServiceGlass-1.0-SNAPSHOT.war"></property>
-      <property name="archiveType" value="war"></property>
-      <property name="defaultAppName" value="WebServiceGlass-1.0-SNAPSHOT"></property>
-      <module name="WebServiceGlass-1.0-SNAPSHOT">
-        <engine sniffer="webservices"></engine>
-        <engine sniffer="security"></engine>
-        <engine sniffer="web"></engine>
-        <engine sniffer="weld"></engine>
-      </module>
-    </application>
-  </applications>
+  <applications></applications>
 </domain>
