@@ -6,3 +6,4 @@ For creating ```.war``` file and deploy app on the server use ```./deploy.sh``` 
 
 If script does not work use: ```chmod +x deploy.sh```
 
+Server requires java 8
